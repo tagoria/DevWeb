@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Streamboard</title>
+	<link rel="stylesheet" type="text/css" href="Styles/PetiteResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/GrosseResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Tous.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Accueil.css">
+</head>
+<body>
+	<nav th:replace="~{fragments::menu}">
+
+	</nav>
+	<section class="contenu">
+		<h1>Bienvenue sur cette soundboard de streamers français </h1>
+		<div class="imageStreamer" th:each="streamer : ${listeStreamers}">
+			<figure>
+				<img th:src="${streamer.getCheminImage()}" src="Images/imageNotFound.jpg">
+			</figure>
+		</div>
+	</section>
+</body>
+</html>

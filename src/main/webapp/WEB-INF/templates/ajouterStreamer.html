@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Bienvenue</title>
+	<link rel="stylesheet" type="text/css" href="Styles/PetiteResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/GrosseResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Tous.css">
+	<link rel="stylesheet" type="text/css" href="Styles/AjouterSon.css">
+</head>
+<body>
+<nav th:replace="~{fragments::menu}">
+
+</nav>
+	<div class="formulaire">
+
+		<form method="post" enctype="multipart/form-data">
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<label for="nomStreamer" class="etiquette">Nom du Streamer</label>
+						<input type="text" name="nomStreamer" maxlength="25" required id="nomStreamer">
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<label for="description" class="etiquette">Description courte du Streamer</label>
+						<textarea required maxlength="500" id="description" name="description"></textarea>
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<div class="etiquette">Avatar</div>
+						<input type="file" name="fichierImage" required accept=".jpg" id="fichierImage">
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<input type="submit" name="envoyer">
+					</section>
+				</section>
+			</section>
+		</form>
+	</div>
+<h2 th:text="${messageStatutAjout}" class="messageErreur"></h2>
+</body>
+</html>

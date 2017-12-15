@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Bienvenue</title>
+	<link rel="stylesheet" type="text/css" href="Styles/PetiteResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/GrosseResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Tous.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Streamers.css">
+</head>
+<body>
+<nav th:replace="~{fragments::menu}">
+
+</nav>
+	<div class="sectionstreamer">
+		<div class="streamer" th:each="streamer:${listeStreamers}">
+			<figure>
+				<img th:src="${streamer.getCheminImage()}" src="Images/imageNotFound.jpg"/>
+			</figure>
+			<p th:text="${streamer.description}">Description non trouvée.
+			</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Bienvenue</title>
+	<link rel="stylesheet" type="text/css" href="Styles/PetiteResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/GrosseResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Tous.css">
+	<link rel="stylesheet" type="text/css" href="Styles/AjouterSon.css">
+</head>
+<body>
+<nav th:replace="~{fragments::menu}">
+
+</nav>
+	<div class="formulaire">
+		<form method="post" enctype="multipart/form-data">
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<label for="description" class="etiquette">Description du son</label>
+						<input type="text" name="description" required maxlength="50" id="description">
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<label for="streamer" class="etiquette">Streamer associé</label>
+						<select class="form-control" name="streamer" id="streamer">
+							<option th:each="streamer : ${listeStreamers}" th:value="${streamer.id}" th:text="${streamer.nom}"></option>
+						</select>
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<label for="date" class="etiquette">Date du son</label>
+						<input type="date" name="date" id="date">
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<div class="etiquette">Son à ajouter</div>
+						<input type="file" name="fichierAudio" required accept=".mp3" id="fichierAudio">
+					</section>
+				</section>
+			</section>
+			<section class="champ">
+				<section class="champflex">
+					<section class="champFinal">
+						<input type="submit" name="envoyer">
+					</section>
+				</section>
+			</section>
+		</form>
+	</div>
+</body>
+</html>

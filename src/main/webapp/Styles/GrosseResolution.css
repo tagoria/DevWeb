@@ -1,0 +1,47 @@
+@media screen and (min-width: 1201px) {
+	nav{
+	height:30px;
+	}
+.sectionstreamer{
+	top:30px;
+}
+.contenu{
+	top:30px;
+}
+.formulaire{
+	top:60px;
+}
+.page{
+	top:30px;
+}
+.champ{
+		width:50%;
+}
+	.messageErreur{
+		top:30px;
+		position:absolute;
+		height: 30px;
+	}
+
+audio
+{
+	margin-left:5px;
+	margin-right:7px;
+-webkit-transition:all 0.5s linear;
+-moz-transition:all 0.5s linear;
+-o-transition:all 0.5s linear;
+transition:all 0.5s linear;
+-webkit-box-shadow:  2px 2px 4px 0 #006773;
+box-shadow: 2px 2px 4px 0 #006773;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+}
+audio:hover, audio:focus, audio:active
+{
+-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+-webkit-transform: scale(1.05);
+-moz-transform: scale(1.05);
+transform: scale(1.05);
+}
+}

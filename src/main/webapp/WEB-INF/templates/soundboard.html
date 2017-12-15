@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Bienvenue</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Styles/PetiteResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/GrosseResolution.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Tous.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Soundboard.css">
+	<script src="JS/ScriptSoundboard.js" type="text/javascript"></script>
+</head>
+<body>
+<nav th:replace="~{fragments::menu}">
+
+</nav>
+	<div class="page">
+		<section class="sectionTableau">
+			<table>
+				<tr  class="impaire">
+					<th>Streamer</th>
+					<th>Date du Son</th>
+					<th>Description du Son</th>
+					<th>Actions</th>
+				</tr>
+				<tr th:each="son : ${listeSon}" th:class="${(son.getId()%2==0)?'paire':'impaire'}" th:id="ligneSon+${son.id}" >
+					<td th:text="${son.streamer.getNom()}" th:id="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonStreamer':''}" >Zerator</td>
+					<td th:text="${son.date}" th:id="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonDate':''}">10/09/2017</td>
+					<td th:text="${son.description}" th:class="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonDescription':''}" th:id="'nomSon'+${son.id}">PARCE QUE C'EST NOTRE PROJET</td>
+					<td class="caseAction"><audio controls  th:src="${son.getCheminSon()}">Votre navigateur ne prend pas en charge l'élément <code>audio</code></audio><input type="button" th:id="${son.id}" class="boutonSuppr"><a th:href="${'modifierSon?id='+son.getId()}"> <img src="Images/Modifier.jpg"></a></td>
+				</tr>
+			</table>
+		</section>
+	</div>
+</body>
+</html>

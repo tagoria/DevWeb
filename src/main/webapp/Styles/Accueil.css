@@ -1,0 +1,30 @@
+.contenu{
+	background-color: lightgrey;
+	margin:auto;
+	left:0;
+	width:100%;
+	display:flex;
+	position:absolute;
+	justify-content:center;
+	flex-wrap: wrap;
+}
+.imageStreamer{
+	width:auto;
+	margin:0;
+}
+
+h1{
+	margin: 0;
+	background-color: white;
+	text-align:center;
+	width:100%;
+}
+.imageStreamer figure{
+	width:100%;
+	height:100%;
+}
+.imageStreamer img{
+	border:solid black 3px;
+	width:100%;
+	height:100%;
+}

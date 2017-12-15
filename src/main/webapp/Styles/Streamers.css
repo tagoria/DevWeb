@@ -1,0 +1,37 @@
+.sectionstreamer{
+	display:block;
+	position:relative;
+	width:100%;
+}
+.streamer{
+	margin:0;
+	position: relative;
+	height:410px;
+	width:410px;
+	overflow: hidden;
+	background-color: black;
+	border-radius: 3px;
+	transition:width 2s ease-in-out;
+}
+.streamer figure{
+	margin:0;
+	position :absolute;
+	left:0;
+	width:400px;
+	height:400px;
+}
+.streamer img{
+	width:400px;
+	height:400px;
+	transition:transform 2s ease-in-out;
+}
+
+.streamer p{
+	position:absolute;
+	left:410px;
+	color:white;
+}
+
+.streamer:hover{
+	width:100%;
+}

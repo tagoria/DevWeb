@@ -1,0 +1,38 @@
+th{
+	font-weight: bold;
+}
+.paire{
+	background-color: lightgrey;
+
+}
+.impaire td,th{
+	border : solid lightgrey 2px;
+}
+.impaire{
+	background-color: #f6f6f6;
+}
+.sectionTableau{
+	background-color: white;
+	width:auto;
+	margin:auto;
+}
+
+.page{
+	position:absolute;
+	height:100%;
+	width:100%;
+	display:flex;
+}
+td{
+	margin:3px;
+	text-align:center;
+}
+.caseAction{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.boutonSuppr{
+	background: url(../Images/Supprimer.jpg);
+}
+

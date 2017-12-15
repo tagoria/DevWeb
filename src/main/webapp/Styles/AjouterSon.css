@@ -1,0 +1,53 @@
+.formulaire{
+	width:100%;
+	height:100%;
+	position: absolute;
+	display:flex;
+}
+form{
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items:center;
+	display:flex;
+	margin:auto;
+}
+.champ{
+	border:solid #FBFBFB 4px;
+	background-color: lightgrey;
+	padding:5px;
+
+}
+.champflex{
+	justify-content: center;
+	align-items:center;
+	display:flex;
+}
+.champFinal{
+	justify-content: center;
+	flex-wrap: wrap;
+	display:flex;
+	width:auto;
+	margin:auto;
+}
+.etiquette{
+	font-weight:bold;
+	padding:5px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #F2F2F2;
+	text-align:center;
+}
+.etiquetteSecondaire{
+	padding:5px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #f3e4e0;
+	text-align:center;
+}
+h2{
+	color:red;
+	display: block;
+	margin: 0;
+	text-align:center;
+	width:100%;
+}
