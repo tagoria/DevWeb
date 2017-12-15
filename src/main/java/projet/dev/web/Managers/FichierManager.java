@@ -1,7 +1,9 @@
 package projet.dev.web.Managers;
 
 import projet.dev.web.Dao.SonDao;
+import projet.dev.web.Dao.StreamerDao;
 import projet.dev.web.Entities.Son;
+import projet.dev.web.Entities.Streamer;
 
 import javax.servlet.http.Part;
 import java.io.IOException;
@@ -16,6 +18,7 @@ public class FichierManager {
     private static class FichierManagerHolder{
         private static FichierManager instance = new FichierManager();
     }
+    private StreamerDao streamerDao;
     private SonDao sonDao;
     public static FichierManager getInstance()
 
@@ -24,6 +27,7 @@ public class FichierManager {
     }
     private FichierManager(){
         sonDao = new SonDao();
+        streamerDao=new StreamerDao();
         Properties configProperties = new Properties();
         try (InputStream configFileStream = getClass().getClassLoader().getResourceAsStream("config.properties")) {
             configProperties.load(configFileStream);
@@ -54,6 +58,10 @@ public class FichierManager {
         Files.deleteIfExists(dir);
         son=saveNewSon(son,sonPart);
         sonDao.modifierSon(son);
+    }
+    public void saveNewStreamer(Streamer streamer , Part imagePart) throws IOException {
+        imagePart.write(Paths.get(repertoirePrincipal,"src/main/webapp" , streamer.getCheminImage()).toString());
+        streamerDao.addStreamer(streamer);
     }
 
 

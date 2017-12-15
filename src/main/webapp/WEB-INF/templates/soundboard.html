@@ -23,9 +23,9 @@
 					<th>Actions</th>
 				</tr>
 				<tr th:each="son : ${listeSon}" th:class="${(son.getId()%2==0)?'paire':'impaire'}" th:id="ligneSon+${son.id}" >
-					<td th:text="${son.streamer.getNom()}" th:id="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonStreamer':''}" >Zerator</td>
-					<td th:text="${son.date}" th:id="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonDate':''}">10/09/2017</td>
-					<td th:text="${son.description}" th:class="${(listeSon.get(listeSon.size()-1).getId()==son.getId())?'dernierSonDescription':''}" th:id="'nomSon'+${son.id}">PARCE QUE C'EST NOTRE PROJET</td>
+					<td th:text="${son.streamer.getNom()}" >Zerator</td>
+					<td th:text="${son.date}" >10/09/2017</td>
+					<td th:text="${son.description}"  th:id="'nomSon'+${son.id}"></td>
 					<td class="caseAction"><audio controls  th:src="${son.getCheminSon()}">Votre navigateur ne prend pas en charge l'élément <code>audio</code></audio><input type="button" th:id="${son.id}" class="boutonSuppr"><a th:href="${'modifierSon?id='+son.getId()}"> <img src="Images/Modifier.jpg"></a></td>
 				</tr>
 			</table>
